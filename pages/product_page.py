@@ -4,7 +4,9 @@ from .locators import ProductPageLocators
 
 class ProductPage(BasePage):
     def add_product_to_basket(self):
-        assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET), "Add to basket is not presented" #Проверка что кнопка добавить в корзину присутствует
+        assert self.is_element_present(
+            *ProductPageLocators.ADD_TO_BASKET), "Add to basket is not presented"  # Проверка что кнопка добавить в
+        # корзину присутствует
         add_to_basket = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET)
         add_to_basket.click()
 
@@ -17,7 +19,9 @@ class ProductPage(BasePage):
 
     def added_product_names_should_be_same(self):
         assert self.is_element_present(*ProductPageLocators.PRODUCT_NAME), "Product price is not presented"
-        assert self.is_element_present(*ProductPageLocators.ADDED_TO_CART_PRODUCT_NAME), "Added to cart product name is not presented"
+        assert self.is_element_present(
+            *ProductPageLocators.ADDED_TO_CART_PRODUCT_NAME), "Added to cart product name is not presented"
         product_name = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
         added_to_cart_prod_name = self.browser.find_element(*ProductPageLocators.ADDED_TO_CART_PRODUCT_NAME).text
-        assert product_name in added_to_cart_prod_name, f"expected name '{product_name}' not in '{added_to_cart_prod_name}'"
+        assert product_name == added_to_cart_prod_name, \
+            f"expected name '{product_name}' not as '{added_to_cart_prod_name}'"
