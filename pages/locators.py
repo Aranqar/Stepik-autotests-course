@@ -16,3 +16,8 @@ class ProductPageLocators:
     PRODUCT_PRICE = (By.CSS_SELECTOR, "div.product_main .price_color")
     PRODUCT_NAME = (By.CSS_SELECTOR, "div.product_main h1")
     ADDED_TO_CART_PRODUCT_NAME = (By.CSS_SELECTOR, "#messages div:nth-child(1) strong")
+
+
+class BasePageLocators:
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
