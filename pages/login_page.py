@@ -9,7 +9,7 @@ class LoginPage(BasePage):
         self.should_be_register_form()
 
     def should_be_login_url(self):
-        assert "/login/" in self.url, "Not found login_url"
+        assert "/login/1" in self.url, "Not found login_url"
 
 
     def should_be_login_form(self):
