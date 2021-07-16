@@ -40,7 +40,8 @@ class TestUserAddToBasketFromProductPage:
 
 xfile = 7
 product_base_link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer"
-links = [product_base_link + str(i) for i in range(10) if i != xfile]
+links = [product_base_link + str(i) for i in range(10) if i != xfile] # При необходимости уменьшить range \
+                                                                # до 1 для уменьшения количества тестов
 xlink = pytest.param(product_base_link + str(xfile), marks=pytest.mark.xfail(reason="Error on page"))
 links.insert(xfile, xlink) # Создаем список офферов и помечаем один как заведомо упавший
 
